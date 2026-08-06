@@ -6,6 +6,12 @@ A self-built monitoring system that runs Linux network diagnostics on an AWS EC2
 
 A Python agent runs on an EC2 instance and periodically executes diagnostic checks — `ping`, `df -h` (disk usage), `ss -tulwn` (open ports), and `traceroute` — parsing and storing the results in a PostgreSQL database running in Docker. This creates a queryable history of network health and system metrics over time.
 
+
+##Live Dashboard
+
+<img width="2746" height="980" alt="image" src="https://github.com/user-attachments/assets/e09604aa-57a2-4abc-80c5-4132bf00d26a" />
+
+
 ## Architecture
 
 - **AWS VPC** — custom-built network (not the default VPC) with a public subnet, Internet Gateway, and route table, configured manually to understand each networking layer
