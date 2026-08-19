@@ -1,0 +1,15 @@
+[Unit]
+Description=Netmon Diagnostic Agent (remote instance)
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu
+Environment="NETMON_DB_HOST=10.0.1.227"
+ExecStart=/usr/bin/python3 /home/ubuntu/agent.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

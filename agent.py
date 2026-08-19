@@ -3,8 +3,12 @@ import psycopg2
 import re
 import socket
 import time
+import os
 
-DB_HOST = "localhost"
+# DB_HOST defaults to localhost (for the instance running Postgres itself).
+# On other instances, set the environment variable before running, e.g.:
+#   export NETMON_DB_HOST=10.0.1.227
+DB_HOST = os.environ.get("NETMON_DB_HOST", "localhost")
 DB_NAME = "netmon"
 DB_USER = "netmon"
 DB_PASSWORD = "netmon_pw"
